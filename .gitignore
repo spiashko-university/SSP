@@ -16,5 +16,6 @@
 
 #libs
 **/node_modules/
+NodeJsLibary/lodash.js
 #file which is used by Dolphi
 **/.directory
