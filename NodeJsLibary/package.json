@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Sergey-Peshko/SSP#readme",
   "devDependencies": {
+    "browserify": "^14.5.0",
     "lodash": "^4.17.4"
   }
 }
