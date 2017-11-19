@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>Password request form</title>
+</head>
+<body>
+<header></header>
+<div class="prf-root">
+    <div class="prf-back"></div>
+    <div class="prf-main">
+        <h1>Password request form</h1>
+
+        <p>The name and photo associated with your google account will be recorder when you upload files
+            and submit this form. Not spas.work@gmail.com?</p>
+
+        <a href="#">Switch account</a>
+        <p class="red">*Required</p>
+        <div class="prf-name">
+            <h1>Please fill your name<span class="red">*</span></h1>
+            <input type="text" class="underline" placeholder="Your answer">
+        </div>
+
+        <div class="prf-color">
+            <h2>What color you like</h2>
+            <input type="radio" name="radAnswer">Red<br>
+            <input type="radio" name="radAnswer">Green<br>
+            <input type="radio" name="radAnswer">Blue<br>
+            <input type="radio" name="radAnswer">Black<br>
+            <input type="radio" name="radAnswer">White<br>
+            <input type="radio" name="radAnswer">Other: <input type="text" class="underline">
+        </div>
+
+        <div class="prf-town">
+            <h2>What town you like more?<span class="red">*</span></h2>
+            <select size="1">
+                <option disabled>Choose</option>
+                <option value="London">London</option>
+                <option value="Paris">Paris</option>
+                <option value="New York">Paris</option>
+                <option value="Mexico City">Paris</option>
+                <option value="Brest">Brest</option>
+            </select>
+        </div>
+
+        <div class="prf-language">
+            <h2>Please describe (at least 50 symbols on symbols) your favorite programming language<span
+                    class="red">*</span></h2>
+            <input type="text" class="underline" placeholder="Your answer">
+        </div>
+
+        <div class="prf-edu-years">
+            <h2>What years of education did you really like<span class="red">*</span></h2>
+            <input type="checkbox">First<br>
+            <input type="checkbox">Second<br>
+            <input type="checkbox">Third<br>
+            <input type="checkbox">Fourth<br>
+        </div>
+
+        <div class="prf-send-image">
+            <h2>Please send any image<span class="red">*</span></h2>
+            <label for="upload-image">Add file</label>
+            <input type="file" name="photo" id="upload-image"/>
+        </div>
+
+        <div class="prf-set-last-monday">
+            <h2>Set last Monday Monday<span class="red">*</span></h2>
+            <input type="date">
+        </div>
+
+        <button id="button" href="#">submit</button>
+        <p class="gray">Never submit passwords through Google Forms</p>
+    </div>
+</div>
+<footer>
+    <p>This content is neither created nor endorsed by Google. Report Abuse - Terms of Service - Additional Terms</p>
+    <h2 class="prf-google-forms-logo">Google Forms</h2>
+</footer>
+
+</body>
+</html>
