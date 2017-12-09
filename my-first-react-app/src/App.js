@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import IconPlusText from "./IconPlusText/IconPlusText";
+import data from './data/data.json';
+import UserInfo from './UserInfo/UserInfo';
 
 class App extends Component {
   render() {
@@ -13,11 +14,11 @@ class App extends Component {
         </header>
         <div className="App-intro">
 
-
-          <IconPlusText icon="address-card-o"/>
-          <IconPlusText icon="map-marker"/>
-          <IconPlusText icon="envelope-o"/>
-          <IconPlusText icon="link" href="https://www.google.by" text="link"/>
+          <UserInfo photo={data.photo}
+                    fullName={data.fullName}
+                    username={data.username}
+                    briefDescription={data.briefDescription}
+                    contacts={data.contacts}/>
 
         </div>
       </div>

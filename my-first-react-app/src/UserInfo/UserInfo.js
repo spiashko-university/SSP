@@ -5,17 +5,34 @@ import IconPlusText from '../IconPlusText/IconPlusText';
 class UserInfo extends Component {
   render() {
     const photo = this.props.photo;
-    const fullname = this.props.fullname;
+    const fullName = this.props.fullName;
     const username = this.props.username;
     const briefDescription = this.props.briefDescription;
     const contacts = this.props.contacts;
 
+    const social = contacts.social;
+    const location = contacts.location;
+    const email = contacts.email;
+    const personalLink = contacts.personalLink;
+
     return (
-        <div>
-          <IconPlusText icon="address-card-o"/>
-          <IconPlusText icon="map-marker"/>
-          <IconPlusText icon="envelope-o"/>
-          <IconPlusText icon="link" href="https://www.google.by" text="link"/>
+        <div className="UserInfo">
+          <img src={photo} alt={photo}/>
+          <p className="UserInfo-fullName">{fullName}</p>
+          <p className="UserInfo-username">{username}</p>
+          <p className="UserInfo-briefDescription">{briefDescription}</p>
+          <IconPlusText icon="address-card-o"
+                        href={social.href}
+                        text={social.text}/>
+          <IconPlusText icon="map-marker"
+                        href={location.href}
+                        text={location.text}/>
+          <IconPlusText icon="envelope-o"
+                        href={email.href}
+                        text={email.text}/>
+          <IconPlusText icon="link"
+                        href={personalLink.href}
+                        text={personalLink.text}/>
         </div>
     );
   }

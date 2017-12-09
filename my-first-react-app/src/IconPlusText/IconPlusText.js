@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './IconPlusText.css';
 import Icon from '../Icon/Icon';
-import LinkText from '../LinkText/LinkText';
 
 class IconPlusText extends Component {
   render() {
@@ -11,7 +10,7 @@ class IconPlusText extends Component {
     return (
         <div className="IconPlusText">
           <Icon icon={icon}/>
-          <LinkText href={href} text={text}/>
+          <a className="IconPlusText" href={href}>{text}</a>
         </div>
     );
   }
