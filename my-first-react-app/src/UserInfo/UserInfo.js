@@ -17,7 +17,8 @@ class UserInfo extends Component {
 
     return (
         <div className="UserInfo">
-          <img src={photo} alt={photo}/>
+          <img src={photo}
+               className="img-rounded UserInfo-photo" alt={photo}/>
           <p className="UserInfo-fullName">{fullName}</p>
           <p className="UserInfo-username">{username}</p>
           <p className="UserInfo-briefDescription">{briefDescription}</p>

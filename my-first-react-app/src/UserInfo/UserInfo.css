@@ -13,3 +13,8 @@
 .UserInfo-briefDescription{
   margin-bottom: 3ch;
 }
+.UserInfo-photo{
+  max-width:100%;
+  height:auto;
+  margin-bottom: 3ch;
+}
