@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './UserInfo.css';
-import IconPlusText from '../IconPlusText/IconPlusText';
+import IconPlusText from '../IconPlusDescription/IconPlusDescription';
 
 class UserInfo extends Component {
   render() {

@@ -3,6 +3,7 @@ import { Col, Row, Grid } from 'react-bootstrap';
 import './App.css';
 import data from './data/data.json';
 import UserInfo from './UserInfo/UserInfo';
+import UserDetails from './UserDetails/UserDetails';
 
 class App extends Component {
   render() {
@@ -21,7 +22,7 @@ class App extends Component {
                             contacts={data.contacts}/>
                 </Col>
                 <Col md={9} lg={9}>
-                   sdsadgasdsadgasdsadgasdsadgasdsadgasdsadga  sdsadgasdsadgasdsadgasdsadgasdsadgasdsadga sdsadgasdsadgasdsadgasdsadgasdsadgasdsadga sdsadgasdsadgasdsadgasdsadgasdsadgasdsadga sdsadgasdsadgasdsadgasdsadgasdsadgasdsadga
+                  <UserDetails details={data.details}/>
                 </Col>
               </Row>
             </Grid>
