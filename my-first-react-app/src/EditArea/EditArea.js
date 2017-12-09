@@ -24,15 +24,20 @@ class EditArea extends Component {
 
     return (
         <div className="EditArea">
-          <div className="text-right">
-            <Checkbox onChange={this.setEditable.bind(this)}>Edit</Checkbox>
-          </div>
+
+          <Checkbox className="text-right"
+                    onChange={this.setEditable.bind(this)}>
+            <span className="EditArea-edit-label">Edit</span>
+          </Checkbox>
+
           <FormGroup controlId={id}>
-            <FormControl componentClass="textarea"
+            <FormControl className="EditArea-textarea"
+                         componentClass="textarea"
                          {...readOnly}
                          defaultValue={text}
                          rows={20}/>
           </FormGroup>
+
         </div>
     );
   }

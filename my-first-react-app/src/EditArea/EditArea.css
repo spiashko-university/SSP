@@ -1,9 +1,9 @@
 .EditArea {
 
 }
-.EditArea-checkbox{
-  margin-right: 3ch;
+.EditArea-edit-label{
+  font-weight: bold;
 }
-.EditArea-checkbox-label{
-  margin-left: 0ch;
+.EditArea-textarea{
+  resize: none;
 }
