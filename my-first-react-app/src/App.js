@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Icon from './Icon/Icon.js'
+import IconPlusText from "./IconPlusText/IconPlusText";
 
 class App extends Component {
   render() {
@@ -14,10 +14,10 @@ class App extends Component {
         <div className="App-intro">
 
 
-          <Icon icon="address-card-o"/>
-          <Icon icon="map-marker"/>
-          <Icon icon="envelope-o"/>
-          <Icon icon="link"/>
+          <IconPlusText icon="address-card-o"/>
+          <IconPlusText icon="map-marker"/>
+          <IconPlusText icon="envelope-o"/>
+          <IconPlusText icon="link" href="https://www.google.by" text="link"/>
 
         </div>
       </div>

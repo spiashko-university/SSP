@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import './IconPlusText.css';
+import Icon from "../Icon/Icon";
+import LinkText from "../LinkText/LinkText";
 
 class IconPlusText extends Component {
   render() {
-    const icon = this.props.icon
-    const fullIconName = "fa fa-" + icon;
-    const text = this.props.text
+    const icon = this.props.icon;
+    const text = this.props.text;
+    const href = this.props.href;
     return (
       <div className="IconPlusText">
-        <i className={fullIconName}></i>
+          <Icon icon={icon}/>
+          <LinkText href={href} text={text}/>
       </div>
     );
   }
 }
 
-export default Icon;
+export default IconPlusText;
 

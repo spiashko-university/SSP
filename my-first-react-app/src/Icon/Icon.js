@@ -3,12 +3,10 @@ import './Icon.css';
 
 class Icon extends Component {
   render() {
-    const icon = this.props.icon
-    const fullName = "fa fa-" + icon;
+    const icon = this.props.icon;
+    const fullClassName = "fa fa-" + icon + " Icon";
     return (
-      <div className="Icon">
-        <i className={fullName}></i>
-      </div>
+        <i className={fullClassName}/>
     );
   }
 }
