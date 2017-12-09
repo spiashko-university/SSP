@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './UserInfo.css';
-import IconPlusText from "../IconPlusText/IconPlusText";
+import IconPlusText from '../IconPlusText/IconPlusText';
 
 class UserInfo extends Component {
   render() {
@@ -11,12 +11,12 @@ class UserInfo extends Component {
     const contacts = this.props.contacts;
 
     return (
-      <div>
-        <IconPlusText icon="address-card-o"/>
-        <IconPlusText icon="map-marker"/>
-        <IconPlusText icon="envelope-o"/>
-        <IconPlusText icon="link" href="https://www.google.by" text="link"/>
-      </div>
+        <div>
+          <IconPlusText icon="address-card-o"/>
+          <IconPlusText icon="map-marker"/>
+          <IconPlusText icon="envelope-o"/>
+          <IconPlusText icon="link" href="https://www.google.by" text="link"/>
+        </div>
     );
   }
 }
