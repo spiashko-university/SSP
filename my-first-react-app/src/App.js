@@ -16,7 +16,7 @@ class App extends Component {
   componentDidMount() {
     let _this = this;
 
-    fetch("https://api.github.com/users/Sergey-Peshko")
+    fetch("https://api.github.com/users/gaearon")
     .then(data => data.json())
     .then(data => {
       _this.setState({
