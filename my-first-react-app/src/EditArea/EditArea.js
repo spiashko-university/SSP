@@ -8,7 +8,7 @@ class EditArea extends Component {
     super(props, context);
 
     this.state = {
-      editable: false,
+      editable: true,
     };
   }
 
@@ -34,7 +34,7 @@ class EditArea extends Component {
           <FormGroup controlId={id}>
             <FormControl className="EditArea-textarea"
                          componentClass="textarea"
-                         readOnly={editable}
+                         readOnly={!editable}
                          defaultValue={text}
                          rows={20}/>
           </FormGroup>
