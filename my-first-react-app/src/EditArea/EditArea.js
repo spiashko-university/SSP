@@ -20,12 +20,13 @@ class EditArea extends Component {
     const id = this.props.id;
     const text = this.props.text;
 
-    const readOnly = this.state.editable ? {}  : {'readOnly' : 'readOnly'};
+    const editable = this.state.editable;
 
     return (
         <div className="EditArea">
 
           <Checkbox className="text-right"
+                    checked={editable}
                     onChange={this.setEditable.bind(this)}>
             <span className="EditArea-edit-label">Edit</span>
           </Checkbox>
@@ -33,7 +34,7 @@ class EditArea extends Component {
           <FormGroup controlId={id}>
             <FormControl className="EditArea-textarea"
                          componentClass="textarea"
-                         {...readOnly}
+                         readOnly={editable}
                          defaultValue={text}
                          rows={20}/>
           </FormGroup>
