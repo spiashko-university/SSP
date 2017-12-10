@@ -8,7 +8,7 @@ class IconDescription extends Component {
     if(href)
     {
       return (
-          <a href={href}>{text}</a>
+          <a className="IconDescription" href={href}>{text}</a>
       );
     }
     else{
