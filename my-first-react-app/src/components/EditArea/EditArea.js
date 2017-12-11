@@ -1,33 +1,26 @@
 import React, {Component} from 'react';
 import { FormControl, Checkbox, FormGroup } from 'react-bootstrap';
 import './EditArea.css';
+import {store} from '../../index';
+import {changeEditable} from '../../actions/actions';
+import {connect} from 'react-redux';
 
 class EditArea extends Component {
-
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      editable: true,
-    };
-  }
-
-  setEditable(e) {
-    this.setState({ editable: e.target.checked });
-  }
-
   render() {
     const id = this.props.id;
     const text = this.props.text;
-
-    const editable = this.state.editable;
+    const editable = this.props.editable;
 
     return (
         <div className="EditArea">
 
           <Checkbox className="text-right"
                     checked={editable}
-                    onChange={this.setEditable.bind(this)}>
+                    onChange={() =>
+                        store.dispatch(
+                            changeEditable(
+                                this.props.id,
+                                this.props.editable))}>
             <span className="EditArea-edit-label">Edit</span>
           </Checkbox>
 
@@ -44,5 +37,11 @@ class EditArea extends Component {
   }
 }
 
-export default EditArea;
+function mapStateToProps (state, ownProps) {
+  return {
+    editable: state.tabsReducer[ownProps.id],
+  }
+}
+
+export default connect(mapStateToProps)(EditArea);
 

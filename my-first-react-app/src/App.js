@@ -57,11 +57,9 @@ class App extends Component {
     if (this.props.status === "empty") return null;
     if (this.props.status === "loading") {
       return (
-          <div>loading...</div>
+          <h1>Loading...</h1>
       );
     }
-
-    console.log(this.props);
 
     const data = this.props.data;
 
@@ -93,8 +91,8 @@ class App extends Component {
 
 function mapStateToProps (state) {
   return {
-    data: state.loader.data,
-    status: state.loader.status
+    data: state.loadReducer.data,
+    status: state.loadReducer.status
   }
 }
 

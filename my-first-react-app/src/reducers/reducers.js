@@ -1,15 +1,28 @@
 import { combineReducers } from 'redux'
 import {
   DATA_LOADED,
-  DATA_LOADING
+  DATA_LOADING,
+  CHANGE_EDITABLE
 } from '../actions/actions';
 
-const defState = {
+import {
+  GENERAL_FRAME,
+  EDUCATION_FRAME,
+  CONTACTS_FRAME
+} from '../constants'
+
+const defLoadState = {
   data: {},
   status: "empty",
 };
 
-function loader(state = defState, action) {
+const defTabsState = {
+  [GENERAL_FRAME]: true,
+  [EDUCATION_FRAME]: true,
+  [CONTACTS_FRAME]: true,
+};
+
+function loadReducer(state = defLoadState, action) {
   switch (action.type) {
     case DATA_LOADING:
       return {...state, status: "loading"};
@@ -20,8 +33,18 @@ function loader(state = defState, action) {
   }
 }
 
+function tabsReducer(state = defTabsState, action) {
+  switch (action.type) {
+    case CHANGE_EDITABLE:
+      return {...state, [action.frame]: !action.value};
+    default:
+      return state;
+  }
+}
+
 const githubViewerApp = combineReducers({
-  loader
+  loadReducer,
+  tabsReducer
 });
 
 export default githubViewerApp

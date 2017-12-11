@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
 import './UserDetails.css';
 import EditArea from '../EditArea/EditArea'
+import {
+  GENERAL_FRAME,
+  EDUCATION_FRAME,
+  CONTACTS_FRAME
+} from '../../constants'
 
 class UserDetails extends Component {
   render() {
@@ -11,13 +16,13 @@ class UserDetails extends Component {
     return (
         <Tabs defaultActiveKey={1} id="userDetails">
           <Tab eventKey={1} title="General">
-            <EditArea id="edit_general" text={general}/>
+            <EditArea id={GENERAL_FRAME} text={general}/>
           </Tab>
           <Tab eventKey={2} title="Education">
-            <EditArea id="edit_education" text={education}/>
+            <EditArea id={EDUCATION_FRAME} text={education}/>
           </Tab>
           <Tab eventKey={3} title="Contacts">
-            <EditArea id="edit_contacts" text={contacts}/>
+            <EditArea id={CONTACTS_FRAME} text={contacts}/>
           </Tab>
         </Tabs>
     );
