@@ -19,6 +19,9 @@
 }
 
 .App-intro {
+  margin-left: 1ch;
+  margin-top: 1ch;
+  text-align: left;
   font-size: large;
 }
 

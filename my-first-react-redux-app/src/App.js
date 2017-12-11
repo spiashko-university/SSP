@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import AddTodo from './components/mixed/AddTodo';
-import VisibleTodoList from './components/containers/VisibleTodoList';
-import Footer from './components/presentationals/Footer';
+import AddTodo from './components/AddItem';
+import List from './components/List';
 
 class App extends Component {
   render() {
@@ -16,8 +15,7 @@ class App extends Component {
         </header>
         <div className="App-intro">
           <AddTodo />
-          <VisibleTodoList />
-          <Footer />
+          <List />
         </div>
       </div>
     );

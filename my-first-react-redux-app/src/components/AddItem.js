@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
-import { connect } from 'react-redux'
-import { addTodo } from '../../actions/actions'
+import { addItem } from '../actions/actions'
+import store from '../store/store'
 
-class AddTodo extends Component {
+class AddItem extends Component {
   render() {
     let input;
     console.log(this.props.dispatch);
+    console.log(this.props);
     return (
         <div>
           <form
@@ -14,7 +15,7 @@ class AddTodo extends Component {
                 if (!input.value.trim()) {
                   return
                 }
-                this.props.dispatch(addTodo(input.value));
+                store.dispatch(addItem(input.value));
                 input.value = ''
               }}
           >
@@ -24,7 +25,7 @@ class AddTodo extends Component {
                 }}
             />
             <button type="submit">
-              Add Todo
+              Add Item
             </button>
           </form>
         </div>
@@ -32,6 +33,4 @@ class AddTodo extends Component {
   }
 }
 
-AddTodo = connect()(AddTodo);
-
-export default AddTodo
+export default AddItem
