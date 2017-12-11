@@ -19,28 +19,14 @@ class App extends Component {
     });
   }
 
-  render() {
-
-    if (this.props.status === "empty") return null;
-    if (this.props.status === "loading") {
-      return (
-          <div>loading...</div>
-      );
-    }
-
-    console.log(this.props);
-
-    const data = this.props.data;
-
-
+  static prepareContacts(data){
     let email = "email is not visible";
 
-    if (this.props.data.email != null) {
-      email = this.props.data.email;
+    if (data.email != null) {
+      email = data.email;
     }
 
-
-    const contacts = {
+    return {
       social:{
         href: data.blog,
         text: data.blog
@@ -56,12 +42,29 @@ class App extends Component {
         text: data.html_url
       }
     };
+  }
 
-    const details = {
+  static prepareDetails(data){
+    return {
       general: data.bio,
       education: data.bio,
       contacts: data.bio
     };
+  }
+
+  render() {
+
+    if (this.props.status === "empty") return null;
+    if (this.props.status === "loading") {
+      return (
+          <div>loading...</div>
+      );
+    }
+
+    console.log(this.props);
+
+    const data = this.props.data;
+
 
     return (
         <div className="App">
@@ -75,10 +78,10 @@ class App extends Component {
                             fullName={data.name}
                             username={data.login}
                             briefDescription={data.bio}
-                            contacts={contacts}/>
+                            contacts={App.prepareContacts(data)}/>
                 </Col>
                 <Col md={9} lg={9}>
-                  <UserDetails details={details}/>
+                  <UserDetails details={App.prepareDetails(data)}/>
                 </Col>
               </Row>
             </Grid>
@@ -90,8 +93,8 @@ class App extends Component {
 
 function mapStateToProps (state) {
   return {
-    data: state.data,
-    status: state.status
+    data: state.loader.data,
+    status: state.loader.status
   }
 }
 
