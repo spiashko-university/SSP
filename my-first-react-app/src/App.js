@@ -1,44 +1,44 @@
 import React, {Component} from 'react';
 import { Col, Row, Grid } from 'react-bootstrap';
 import './App.css';
-import UserInfo from './UserInfo/UserInfo';
-import UserDetails from './UserDetails/UserDetails';
+import UserInfo from './components/UserInfo/UserInfo';
+import UserDetails from './components/UserDetails/UserDetails';
+import {store} from './index'
+import {loadData, loadingData} from './actions/actions';
+import {connect} from 'react-redux';
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      isLoaded: false
-    }
-  }
-
   componentDidMount() {
-    let _this = this;
+    store.dispatch(loadingData());
 
     fetch("https://api.github.com/users/gaearon")
     .then(data => data.json())
     .then(data => {
-      _this.setState({
-        data: data,
-        isLoaded: true
-      })
+      store.dispatch(loadData(data));
     });
   }
 
   render() {
 
-    if (this.state.isLoaded === false) return null;
+    if (this.props.status === "empty") return null;
+    if (this.props.status === "loading") {
+      return (
+          <div>loading...</div>
+      );
+    }
+
+    console.log(this.props);
+
+    const data = this.props.data;
+
 
     let email = "email is not visible";
 
-    if (this.state.data.email != null) {
-      email = this.state.data.email;
+    if (this.props.data.email != null) {
+      email = this.props.data.email;
     }
 
-    const data = this.state.data;
-
-    console.log(this.state.data);
 
     const contacts = {
       social:{
@@ -88,4 +88,11 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps (state) {
+  return {
+    data: state.data,
+    status: state.status
+  }
+}
+
+export default connect(mapStateToProps)(App);
